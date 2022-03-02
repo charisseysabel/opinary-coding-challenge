@@ -9,8 +9,12 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: [".ts", ".js"]
+  },
   module: {
     rules: [
+      { test: /\.html$/i, use: 'html-loader' },
       {
         test: /\.css$/,
         use: [
