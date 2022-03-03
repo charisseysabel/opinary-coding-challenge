@@ -1,6 +1,7 @@
 import './poll.css';
 import { IConfig } from '../../types';
 import LocalStorage from '../../services/localStorage';
+import showResult from '../pollResult/pollResult';
 
 function handleSubmit(e: any, pollId: string, optionsId: string) {
   e.preventDefault();
@@ -14,6 +15,8 @@ function handleSubmit(e: any, pollId: string, optionsId: string) {
   const formData = new FormData(form as HTMLFormElement);
   const localStorageClient = new LocalStorage({ key: pollId })
   localStorageClient.savePolls(formData.get(optionsId) as string);
+
+  showResult();
 }
 
 export default function loadPoll(window: Window): void {
