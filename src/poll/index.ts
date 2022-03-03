@@ -3,7 +3,7 @@ import './styles.css';
 import { IConfig } from './types';
 
 function app(): void {
-  const config: IConfig = require(`../configs/${__CONFIG}`);
+  const config: IConfig = require(`../../configs/${__CONFIG}`);
   const { pollId, question, options } = config
 
   if (!pollId || !question) {
