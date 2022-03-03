@@ -29,6 +29,10 @@ This creates 3 files in the `dist` directory:
 - `index.html` - a basic html file.
 - `embed.js` - The embed script that needs to be added to `index.html` via `script` tags. This will "inject" `bundle.js` into the file.
 
+## Demo
+
+2 demo files are under `/demo` and can be viewed by opening the html file in the browser.
+
 ## Summary
 
 ### Thought process
