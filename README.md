@@ -37,12 +37,12 @@ This creates 3 files in the `dist` directory:
 ### Technical decisions
 - Usage of JSON files as config files - This is mainly to save time so that I can avoid setting up a backend from scratch. It's not the most user-friendly way of configuring questions, but for the purpose of the demo, I think it's sufficient.
 - Namespace - While the html file does not contain any other content aside from the poll itself, I applied the `op-` prefix on classes, as well as scoped the styles under the `#poll` id, to make sure that other content within the page will not be affected by poll-specific styles.
-- No framework - The widget is relatively simple enough that using a framework could be a bit overkill. Another reason is that I also would like to try not using any framework. The advantage is that the overall package size is very small. The disadvantage could be that it looks more verbose and harder to perceive.
+- No framework - The widget is relatively simple enough that using a framework could be a bit overkill. Another reason is that I also would like to try not using any framework in the first place. The advantage is that the overall package size is very small. The disadvantage could be that it looks more verbose and harder to perceive.
 
 ### What could be improved
 - File exports
 - Developer experience (eslint, prettier, etc)
-- Preventing poll from being shown twice
+- The embed file is minified, but I did not manage to make sure that the poll cannot show twice on the same page.
 - Loading state
 - More tests to cover the generated HTML
 

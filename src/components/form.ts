@@ -30,7 +30,6 @@ function handleSubmit(e: any, pollId: string, optionsId: string, config: IConfig
 
 export default function loadForm(config: IConfig): void {
   const { question, options, pollId } = config
-  
 
   const formQuestion = document.createElement('p');
   formQuestion.innerText = question;
