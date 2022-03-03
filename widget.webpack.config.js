@@ -6,9 +6,5 @@ module.exports = () => ({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'widget.js',
-    scriptType: 'text/javascript',
-  },
-  resolve: {
-    extensions: [".ts"]
   },
 })
