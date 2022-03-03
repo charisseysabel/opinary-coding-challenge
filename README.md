@@ -45,10 +45,10 @@ This creates 3 files in the `dist` directory:
 - Preventing poll from being shown twice
 - Loading state
 
-
 ## Create new configs
 
 1. Duplicate `example-config.json` found at the root directory. Rename the new file into to something else.
 2. Replace empty strings with preferred values.
-3. On `package.json`, change the `config` env variables to the name of the file you just created.
-4. Run command.
+3. On `package.json`, change the `config` env variables in `start` and `build:bundle` scripts to the name of the file you just created.
+4. Run commands.
+5. (Optional) To create a new demo file with the new config, run `npm run build:bundle`. This will create a new `dist` directory containing 3 files. To show the poll in the html, copy the contents of `widget.js` and add it as a script in the html. (This is really only to demonstrate that you only need `widget.js` when adding a poll.)
