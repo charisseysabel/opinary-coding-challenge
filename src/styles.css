@@ -4,6 +4,7 @@
 
 #poll {
   padding: 10px;
+  max-width: 650px;
 }
 
 #poll .op-opoll__form,
@@ -48,4 +49,10 @@
 #poll .op-poll__pollResultItem {
   display: flex;
   justify-content: space-between;
+}
+
+#poll .op-poll__pollResultItem .op-poll__total {
+  text-align: right;
+  white-space: nowrap;
+  margin-left: 10px;
 }
