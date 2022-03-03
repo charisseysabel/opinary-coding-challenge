@@ -30,11 +30,11 @@ module.exports = (env) => ({
     ]
   },
   devServer: {
-    static: './src',
+    static: './src/poll',
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: env.production ? './public/index.html' : './src/index.html' }],
+      patterns: [{ from: env.production ? './public/index.html' : './src/poll/index.html' }],
     }),
     new webpack.DefinePlugin({
       __CONFIG: JSON.stringify(env.config)
