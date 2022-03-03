@@ -21,11 +21,11 @@ export default function showResult(config: IConfig): void {
     optionLabel.innerText = option;
     
     const votes = document.createElement('span');
-    votes.setAttribute('class', `${CLASS_PREFIX}__total`)
+    votes.setAttribute('class', `${CLASS_PREFIX}-total`)
     votes.innerText = `${results[id] ?? '0'} votes`;
 
     const inputText = document.createElement('p');
-    inputText.setAttribute('class', `${CLASS_PREFIX}__pollResultItem`);
+    inputText.setAttribute('class', `${CLASS_PREFIX}-pollResultItem`);
     inputText.appendChild(optionLabel);
     inputText.appendChild(votes);
 

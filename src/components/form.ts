@@ -4,9 +4,9 @@ import showResult from './poll-result';
 import { CLASS_PREFIX } from '../constants';
 
 const CLASSNAME_MAPPINGS = {
-  FORM: `${CLASS_PREFIX}__form`,
-  OPTIONS: `${CLASS_PREFIX}__options`,
-  BUTTON: `${CLASS_PREFIX}__button`,
+  FORM: `${CLASS_PREFIX}-form`,
+  OPTIONS: `${CLASS_PREFIX}-options`,
+  BUTTON: `${CLASS_PREFIX}-button`,
 }
 
 function handleSubmit(e: any, pollId: string, optionsId: string, config: IConfig): void {

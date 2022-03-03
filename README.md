@@ -26,7 +26,7 @@ npm run build
 
 This creates 3 files in the `dist` directory:
 - `bundle.js` - The actual file where all the logic is stored. In a real world example, this file would probably come from a CDN.
-- `index.html` - an empty html file.
+- `index.html` - a basic html file.
 - `widget.js` - The embed script that needs to be added to `index.html` via `script` tags. This will "inject" `bundle.js` into the file.
 
 ## Summary
@@ -44,6 +44,7 @@ This creates 3 files in the `dist` directory:
 - Developer experience (eslint, prettier, etc)
 - Preventing poll from being shown twice
 - Loading state
+- More tests to cover the generated HTML
 
 ## Create new configs
 

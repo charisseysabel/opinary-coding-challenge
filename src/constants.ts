@@ -1,1 +1,1 @@
-export const CLASS_PREFIX= 'op-poll'
+export const CLASS_PREFIX= 'op'
