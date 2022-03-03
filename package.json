@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "webpack serve --open --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack serve --open --mode development --env config=poll.json",
+    "build": "webpack --mode production --env config=poll.json",
     "clean": "rm dist/bundle.js",
     "test": "jest"
   },

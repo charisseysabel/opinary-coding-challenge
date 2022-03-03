@@ -1,7 +1,10 @@
-import injectPoll from './components/poll/poll';
+import loadPoll from './components/poll/poll';
+import { IConfig } from './types';
 
-function app() {
-  injectPoll()
+const defaultConfig: IConfig = {
+  elementId: '',
+  question: '',
+  options: []
 }
 
-app();
+loadPoll(window, defaultConfig);

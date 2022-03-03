@@ -1,0 +1,9 @@
+{
+  "elementId": "poll",
+  "question": "How do you do today?",
+  "options": [
+    "Brilliant! I have so much energy",
+    "Always can be worse",
+    "Please, end my misery"
+  ]
+}

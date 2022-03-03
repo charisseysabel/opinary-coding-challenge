@@ -3,7 +3,7 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const config = {
+module.exports = (env) => ({
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -36,7 +36,10 @@ const config = {
     new CopyPlugin({
       patterns: [{ from: 'src/index.html' }],
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      __CONFIG: JSON.stringify(env.config)
+    })
   ],
   resolve: {
     extensions: [
@@ -45,6 +48,4 @@ const config = {
       '.js'
     ]
   }
-};
-
-module.exports = config;
+})
