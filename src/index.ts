@@ -7,4 +7,4 @@ const defaultConfig: IConfig = {
   options: []
 }
 
-loadPoll(window, defaultConfig);
+loadPoll(window);
