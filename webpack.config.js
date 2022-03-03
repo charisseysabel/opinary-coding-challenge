@@ -36,16 +36,8 @@ module.exports = (env) => ({
     new CopyPlugin({
       patterns: [{ from: 'src/index.html' }],
     }),
-    new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
       __CONFIG: JSON.stringify(env.config)
     })
-  ],
-  resolve: {
-    extensions: [
-      '.tsx',
-      '.ts',
-      '.js'
-    ]
-  }
+  ]
 })
