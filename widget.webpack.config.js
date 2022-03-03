@@ -1,10 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 
-module.exports = (env) => ({
+module.exports = () => ({
   entry: './src/widget/widget.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),

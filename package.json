@@ -4,14 +4,15 @@
   "description": "",
   "scripts": {
     "start": "webpack serve --open --mode development --env config=poll.json",
-    "build": "webpack --mode production --env config=poll.json",
+    "build:bundle": "webpack --mode production --env config=poll.json",
+    "build:widget": "webpack --mode production --config widget.webpack.config.js",
+    "build": "npm run build:widget && npm run build:bundle",
     "clean": "rm dist/bundle.js",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
     "html-loader": "^3.1.0",
