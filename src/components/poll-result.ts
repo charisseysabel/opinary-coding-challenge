@@ -1,4 +1,4 @@
-import LocalStorage from "../services/localStorage";
+import LocalStorage from "../services/local-storage";
 import { IConfig } from "../types";
 
 export default function showResult(config: IConfig): void {

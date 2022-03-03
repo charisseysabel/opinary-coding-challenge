@@ -39,3 +39,19 @@ export default class LocalStorage {
     })
   }
 }
+
+
+/**
+ * 
+ * 
+ * 
+ * op-poll: {
+ *      pollId = {
+ *        index-1: 23,
+ *        index-2: 0,
+ *        index-3: 55
+ *      }
+ * }
+ * 
+ * 
+ */

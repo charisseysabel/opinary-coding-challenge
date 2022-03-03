@@ -1,6 +1,6 @@
 import { IConfig } from '../types';
-import LocalStorage from '../services/localStorage';
-import showResult from './pollResult';
+import LocalStorage from '../services/local-storage';
+import showResult from './poll-result';
 
 const CLASSNAME_MAPPINGS = {
   FORM: 'op-poll__form',
