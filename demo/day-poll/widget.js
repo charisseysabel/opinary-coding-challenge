@@ -1,0 +1,1 @@
+!function(e){const t=document.createElement("script"),n=document.getElementsByTagName("script")[0];t.async=!0,t.src="./bundle.js",n.parentNode?.insertBefore(t,n)}();
