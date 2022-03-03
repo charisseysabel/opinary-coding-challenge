@@ -1,7 +1,7 @@
 {
   "elementId": "poll",
   "pollId": "pollId-123",
-  "question": "test",
+  "question": "How do you feel today?",
   "options": {
     "id": "optionId-234",
     "values": [
