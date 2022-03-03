@@ -1,0 +1,13 @@
+{
+  "elementId": "poll",
+  "pollId": "pollId-2342",
+  "question": "How did you like the Opinary test?",
+  "options": {
+    "id": "optionId-333",
+    "values": [
+      "It was great and so challenging",
+      "Not bad, but you can improve",
+      "It was a nightmare, never again"
+    ]
+  }
+}
