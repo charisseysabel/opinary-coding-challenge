@@ -1,6 +1,6 @@
-import { IConfig } from '../../types';
-import LocalStorage from '../../services/localStorage';
-import showResult from '../pollResult/pollResult';
+import { IConfig } from '../types';
+import LocalStorage from '../services/localStorage';
+import showResult from './pollResult';
 
 const CLASSNAME_MAPPINGS = {
   FORM: 'op-poll__form',
@@ -28,7 +28,7 @@ function handleSubmit(e: any, pollId: string, optionsId: string, config: IConfig
     })
 }
 
-export default function loadPoll(config: IConfig): void {
+export default function loadForm(config: IConfig): void {
   const { elementId, question, options, pollId } = config
   
 

@@ -1,4 +1,4 @@
-import loadPoll from './components/poll/poll';
+import loadForm from './components/form';
 import './styles.css';
 import { IConfig } from './types';
 
@@ -9,7 +9,7 @@ function app(): void {
     throw new Error(`Config not found.`);
   }
 
-  loadPoll(config);
+  loadForm(config);
 }
 
 app();

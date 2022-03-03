@@ -1,5 +1,5 @@
-import LocalStorage from "../../services/localStorage";
-import { IConfig } from "../../types";
+import LocalStorage from "../services/localStorage";
+import { IConfig } from "../types";
 
 export default function showResult(config: IConfig): void {
   const { elementId, question, options, pollId } = config
