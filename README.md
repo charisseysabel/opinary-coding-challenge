@@ -27,7 +27,7 @@ npm run build
 This creates 3 files in the `dist` directory:
 - `bundle.js` - The actual file where all the logic is stored. In a real world example, this file would probably come from a CDN.
 - `index.html` - a basic html file.
-- `widget.js` - The embed script that needs to be added to `index.html` via `script` tags. This will "inject" `bundle.js` into the file.
+- `embed.js` - The embed script that needs to be added to `index.html` via `script` tags. This will "inject" `bundle.js` into the file.
 
 ## Summary
 
@@ -52,4 +52,4 @@ This creates 3 files in the `dist` directory:
 2. Replace empty strings with preferred values.
 3. On `package.json`, change the `config` env variables in `start` and `build:bundle` scripts to the name of the file you just created.
 4. Run commands.
-5. (Optional) To create a new demo file with the new config, run `npm run build:bundle`. This will create a new `dist` directory containing 3 files. To show the poll in the html, copy the contents of `widget.js` and add it as a script in the html. (This is really only to demonstrate that you only need `widget.js` when adding a poll.)
+5. (Optional) To create a new demo file with the new config, run `npm run build:bundle`. This will create a new `dist` directory containing 3 files. To show the poll in the html, copy the contents of `embed.js` and add it as a script in the html. (This is really only to demonstrate that you only need `embed.js` when adding a poll.)
