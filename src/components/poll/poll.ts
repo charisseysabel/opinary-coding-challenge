@@ -2,20 +2,30 @@ import { IConfig } from '../../types';
 import LocalStorage from '../../services/localStorage';
 import showResult from '../pollResult/pollResult';
 
-function handleSubmit(e: any, pollId: string, optionsId: string) {
+const CLASSNAME_MAPPINGS = {
+  FORM: 'op-poll__form',
+  OPTIONS: 'op-poll__options',
+  BUTTON: 'op-poll__button',
+}
+
+function handleSubmit(e: any, pollId: string, optionsId: string, config: IConfig): void {
   e.preventDefault();
   console.log('submitting');
 
-  const form = document.getElementById('op-poll__form');
+  const form = document.getElementById(CLASSNAME_MAPPINGS.FORM);
   if (!form) {
     return;
   }
 
   const formData = new FormData(form as HTMLFormElement);
   const localStorageClient = new LocalStorage({ key: pollId })
-  localStorageClient.savePolls(formData.get(optionsId) as string);
-
-  // showResult();
+  localStorageClient.savePolls(formData.get(optionsId) as string)
+    .then(() => {
+      showResult(config);
+    })
+    .catch(e => {
+      throw new Error(e)
+    })
 }
 
 export default function loadPoll(config: IConfig): void {
@@ -26,7 +36,7 @@ export default function loadPoll(config: IConfig): void {
   formQuestion.innerText = question;
 
   const optionsContainer = document.createElement('div');
-  optionsContainer.setAttribute('class', 'op-poll__options');
+  optionsContainer.setAttribute('class', CLASSNAME_MAPPINGS.OPTIONS);
 
   options.values.forEach((option, index) => {
     const id = `op-radio-${index}`
@@ -51,13 +61,13 @@ export default function loadPoll(config: IConfig): void {
 
   const submitButton = document.createElement('button');
   submitButton.setAttribute('type', 'submit');
-  submitButton.setAttribute('class', 'op-poll__button');
+  submitButton.setAttribute('class', CLASSNAME_MAPPINGS.BUTTON);
   submitButton.innerText = 'Submit';
 
   const form = document.createElement('form');
-  form.addEventListener('submit', (e) => handleSubmit(e, pollId, options.id));
-  form.setAttribute('class', 'op-poll__form');
-  form.setAttribute('id', 'op-poll__form');
+  form.addEventListener('submit', (e) => handleSubmit(e, pollId, options.id, config));
+  form.setAttribute('class', CLASSNAME_MAPPINGS.FORM);
+  form.setAttribute('id', CLASSNAME_MAPPINGS.FORM);
   form.appendChild(formQuestion);
   form.appendChild(optionsContainer);
   form.appendChild(submitButton);

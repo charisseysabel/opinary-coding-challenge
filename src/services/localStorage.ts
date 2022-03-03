@@ -20,8 +20,7 @@ export default class LocalStorage {
     return polls[this.key] ?? {};
   }
 
-  public savePolls = (value: string) => {
-    console.log('values', value);
+  public savePolls = (value: string): Promise<void> => {
     const currentValues = this.getPolls();
     
     if (currentValues[value]) {
@@ -30,6 +29,13 @@ export default class LocalStorage {
       currentValues[value] = 1
     }
 
-    this.localStorage.setItem(KEY, JSON.stringify({[this.key]: currentValues}))
+    return new Promise((resolve, reject) => {
+      try {
+        this.localStorage.setItem(KEY, JSON.stringify({[this.key]: currentValues}));
+        resolve();
+      } catch (error) {
+        reject(`Error saving response: ${error}`);
+      }
+    })
   }
 }

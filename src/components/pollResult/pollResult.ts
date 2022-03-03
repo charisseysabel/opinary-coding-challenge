@@ -9,7 +9,7 @@ export default function showResult(config: IConfig): void {
   const resultContainer = document.createElement('div');
 
   const questionContainer = document.createElement('p');
-  questionContainer.innerText = question;
+  questionContainer.innerText = `Results of "${question}"`;
 
   resultContainer.appendChild(questionContainer);
 
