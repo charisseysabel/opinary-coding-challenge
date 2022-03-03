@@ -1,9 +1,19 @@
 import './poll.css';
 import { IConfig } from '../../types';
+import LocalStorage from '../../services/localStorage';
 
-function handleSubmit(e: Event) {
+function handleSubmit(e: any, pollId: string, optionsId: string) {
   e.preventDefault();
   console.log('submitting');
+
+  const form = document.getElementById('op-poll__form');
+  if (!form) {
+    return;
+  }
+
+  const formData = new FormData(form as HTMLFormElement);
+  const localStorageClient = new LocalStorage({ key: pollId })
+  localStorageClient.savePolls(formData.get(optionsId) as string);
 }
 
 export default function loadPoll(window: Window): void {
@@ -13,7 +23,8 @@ export default function loadPoll(window: Window): void {
     throw new Error(`Config not found.`);
   }
 
-  const { elementId, question, options} = config
+  const { elementId, question, options, pollId } = config
+  
 
   const formQuestion = document.createElement('p');
   formQuestion.innerText = question;
@@ -21,14 +32,14 @@ export default function loadPoll(window: Window): void {
   const optionsContainer = document.createElement('div');
   optionsContainer.setAttribute('class', 'op-poll__options');
 
-  options.forEach((option, index) => {
+  options.values.forEach((option, index) => {
     const id = `op-radio-${index}`
 
     const inputField = document.createElement('input');
     inputField.setAttribute('type', 'radio');
     inputField.setAttribute('id', id);
-    inputField.setAttribute('name', `op-poll`);
-    inputField.setAttribute('value', option);
+    inputField.setAttribute('value', id);
+    inputField.setAttribute('name', options.id);
 
     const label = document.createElement('label');
     label.setAttribute('for', id);
@@ -47,8 +58,9 @@ export default function loadPoll(window: Window): void {
   submitButton.innerText = 'Submit';
 
   const form = document.createElement('form');
-  form.addEventListener('submit', handleSubmit);
+  form.addEventListener('submit', (e) => handleSubmit(e, pollId, options.id));
   form.setAttribute('class', 'op-poll__form');
+  form.setAttribute('id', 'op-poll__form');
   form.appendChild(formQuestion);
   form.appendChild(optionsContainer);
   form.appendChild(submitButton);
