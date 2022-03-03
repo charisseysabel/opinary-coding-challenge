@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack serve --open --mode development --env config=poll.json",
-    "build:bundle": "webpack --mode production --env config=poll.json",
+    "build:bundle": "webpack --mode production --env production --env config=poll.json",
     "build:widget": "webpack --mode production --config widget.webpack.config.js",
     "build": "npm run build:widget && npm run build:bundle",
     "clean": "rm dist/bundle.js",
