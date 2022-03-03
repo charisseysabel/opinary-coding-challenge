@@ -8,17 +8,20 @@
     "build:widget": "webpack --mode production --config widget.webpack.config.js",
     "build": "npm run build:widget && npm run build:bundle",
     "clean": "rm dist/bundle.js",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.21",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
     "html-loader": "^3.1.0",
     "jest": "^27.5.1",
     "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
+    "ts-jest": "^27.1.3",
     "ts-loader": "^9.2.7",
     "typescript": "^4.6.2",
     "webpack": "^5.69.1",

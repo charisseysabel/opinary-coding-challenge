@@ -5,13 +5,16 @@
     "strict": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "moduleResolution": "node",
-    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node", 
+    "target": "esnext",
     "allowJs": true,
+    "types": ["jest", "node"],
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": [
     "./src/**/*",
     "./types/**/*"
-  ]
+  ],
+  "exclude": ["node_modules"]
 }

@@ -6,7 +6,8 @@ module.exports = (env) => ({
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    iife: true,
   },
   resolve: {
     extensions: [".ts", ".js"]
