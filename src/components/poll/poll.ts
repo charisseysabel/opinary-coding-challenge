@@ -15,16 +15,10 @@ function handleSubmit(e: any, pollId: string, optionsId: string) {
   const localStorageClient = new LocalStorage({ key: pollId })
   localStorageClient.savePolls(formData.get(optionsId) as string);
 
-  showResult();
+  // showResult();
 }
 
-export default function loadPoll(window: Window): void {
-  const config: IConfig = require(`../../configs/${__CONFIG}`);
-
-  if (!config) {
-    throw new Error(`Config not found.`);
-  }
-
+export default function loadPoll(config: IConfig): void {
   const { elementId, question, options, pollId } = config
   
 

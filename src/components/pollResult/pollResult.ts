@@ -1,13 +1,7 @@
 import LocalStorage from "../../services/localStorage";
 import { IConfig } from "../../types";
 
-export default function showResult(): void {
-  const config: IConfig = require(`../../configs/${__CONFIG}`);
-
-  if (!config) {
-    throw new Error(`Config not found.`);
-  }
-
+export default function showResult(config: IConfig): void {
   const { elementId, question, options, pollId } = config
   const localStorageClient = new LocalStorage({ key: pollId })
   const results = localStorageClient.getPolls();
