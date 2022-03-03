@@ -1,4 +1,51 @@
-h1 {
+#poll * {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#poll {
+  padding: 10px;
+}
+
+#poll .op-opoll__form,
+#poll .op-poll__options {
+  display: flex;
+  flex-direction: column;
+}
+
+#poll .op-poll__options label,
+#poll .op-poll__pollResultItem {
+  border: 1px solid rgb(233, 113, 99);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+#poll .op-poll__options label:hover {
+  background-color: salmon;
+}
+
+#poll .op-poll__button {
+  border: transparent;
+  border-radius: 3px;
+  background: #F37335;
+  font-size: 1.1rem;
+  padding: 10px;
+  margin: 20px 0;
+  transition: all 0.3s;
+}
+
+#poll .op-poll__button:hover {
+  background-color:#b85b2c;
   color: white;
-  background-color: black;
+}
+
+#poll .op-poll__button:hover,
+#poll .op-poll__options label:hover {
+  cursor: pointer;
+}
+
+#poll .op-poll__pollResultItem {
+  display: flex;
+  justify-content: space-between;
 }

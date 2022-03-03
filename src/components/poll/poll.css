@@ -1,9 +1,0 @@
-.op-poll__form {
-  display: flex;
-  flex-direction: column;
-}
-
-.op-poll__options {
-  display: flex;
-  flex-direction: column;
-}

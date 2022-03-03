@@ -1,4 +1,3 @@
-import './poll.css';
 import { IConfig } from '../../types';
 import LocalStorage from '../../services/localStorage';
 import showResult from '../pollResult/pollResult';
@@ -58,6 +57,7 @@ export default function loadPoll(window: Window): void {
 
   const submitButton = document.createElement('button');
   submitButton.setAttribute('type', 'submit');
+  submitButton.setAttribute('class', 'op-poll__button');
   submitButton.innerText = 'Submit';
 
   const form = document.createElement('form');
