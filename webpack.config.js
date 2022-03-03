@@ -29,11 +29,11 @@ module.exports = (env) => ({
     ]
   },
   devServer: {
-    static: './dist',
+    static: './src',
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'src/index.html' }],
+      patterns: [{ from: env.production ? './public/index.html' : './src/index.html' }],
     }),
     new webpack.DefinePlugin({
       __CONFIG: JSON.stringify(env.config)
