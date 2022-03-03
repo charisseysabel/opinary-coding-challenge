@@ -10,7 +10,6 @@ const CLASSNAME_MAPPINGS = {
 
 function handleSubmit(e: any, pollId: string, optionsId: string, config: IConfig): void {
   e.preventDefault();
-  console.log('submitting');
 
   const form = document.getElementById(CLASSNAME_MAPPINGS.FORM);
   if (!form) {
@@ -29,7 +28,7 @@ function handleSubmit(e: any, pollId: string, optionsId: string, config: IConfig
 }
 
 export default function loadForm(config: IConfig): void {
-  const { elementId, question, options, pollId } = config
+  const { question, options, pollId } = config
   
 
   const formQuestion = document.createElement('p');
@@ -72,7 +71,7 @@ export default function loadForm(config: IConfig): void {
   form.appendChild(optionsContainer);
   form.appendChild(submitButton);
 
-  const container = document.getElementById(elementId);
+  const container = document.getElementById('poll');
   if (container) {
     container.appendChild(form);
   }

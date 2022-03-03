@@ -1,5 +1,4 @@
 {
-  "elementId": "poll",
   "pollId": "pollId-123",
   "question": "How do you feel today?",
   "options": {

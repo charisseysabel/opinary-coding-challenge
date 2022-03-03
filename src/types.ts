@@ -4,7 +4,6 @@ export interface IPollOptions {
 }
 
 export interface IConfig {
-  elementId: string;
   pollId: string;
   question: string;
   options: IPollOptions

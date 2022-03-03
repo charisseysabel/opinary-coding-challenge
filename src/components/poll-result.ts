@@ -2,7 +2,7 @@ import LocalStorage from "../services/local-storage";
 import { IConfig } from "../types";
 
 export default function showResult(config: IConfig): void {
-  const { elementId, question, options, pollId } = config
+  const { question, options, pollId } = config
   const localStorageClient = new LocalStorage({ key: pollId })
   const results = localStorageClient.getPolls();
 
@@ -30,7 +30,7 @@ export default function showResult(config: IConfig): void {
     resultContainer.appendChild(inputText);
   });
 
-  const container = document.getElementById(elementId);
+  const container = document.getElementById('poll');
   if (container) {
     container.replaceChildren(resultContainer);
   }
