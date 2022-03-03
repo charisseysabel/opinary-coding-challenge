@@ -14,18 +14,23 @@ export default function showResult(): void {
 
   const resultContainer = document.createElement('div');
 
+  const questionContainer = document.createElement('p');
+  questionContainer.innerText = question;
+
+  resultContainer.appendChild(questionContainer);
+
   options.values.forEach((option, index) => {
     const id = `op-radio-${index}`
     
-    const question = document.createElement('span');
-    question.innerText = option;
+    const optionLabel = document.createElement('span');
+    optionLabel.innerText = option;
     
     const votes = document.createElement('span');
     votes.innerText = `${results[id]} votes`;
 
     const inputText = document.createElement('p');
     inputText.setAttribute('class', 'op-poll__pollResultItem');
-    inputText.appendChild(question);
+    inputText.appendChild(optionLabel);
     inputText.appendChild(votes);
 
     resultContainer.appendChild(inputText);
@@ -33,6 +38,6 @@ export default function showResult(): void {
 
   const container = document.getElementById(elementId);
   if (container) {
-    container.appendChild(resultContainer);
+    container.replaceChildren(resultContainer);
   }
 }
