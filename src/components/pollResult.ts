@@ -20,7 +20,7 @@ export default function showResult(config: IConfig): void {
     optionLabel.innerText = option;
     
     const votes = document.createElement('span');
-    votes.innerText = `${results[id]} votes`;
+    votes.innerText = `${results[id] ?? '0'} votes`;
 
     const inputText = document.createElement('p');
     inputText.setAttribute('class', 'op-poll__pollResultItem');
