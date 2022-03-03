@@ -1,11 +1,12 @@
 import { IConfig } from '../types';
 import LocalStorage from '../services/local-storage';
 import showResult from './poll-result';
+import { CLASS_PREFIX } from '../constants';
 
 const CLASSNAME_MAPPINGS = {
-  FORM: 'op-poll__form',
-  OPTIONS: 'op-poll__options',
-  BUTTON: 'op-poll__button',
+  FORM: `${CLASS_PREFIX}__form`,
+  OPTIONS: `${CLASS_PREFIX}__options`,
+  BUTTON: `${CLASS_PREFIX}__button`,
 }
 
 function handleSubmit(e: any, pollId: string, optionsId: string, config: IConfig): void {

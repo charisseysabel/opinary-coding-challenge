@@ -1,3 +1,4 @@
+import { CLASS_PREFIX } from "../constants";
 import LocalStorage from "../services/local-storage";
 import { IConfig } from "../types";
 
@@ -20,11 +21,11 @@ export default function showResult(config: IConfig): void {
     optionLabel.innerText = option;
     
     const votes = document.createElement('span');
-    votes.setAttribute('class', 'op-poll__total')
+    votes.setAttribute('class', `${CLASS_PREFIX}__total`)
     votes.innerText = `${results[id] ?? '0'} votes`;
 
     const inputText = document.createElement('p');
-    inputText.setAttribute('class', 'op-poll__pollResultItem');
+    inputText.setAttribute('class', `${CLASS_PREFIX}__pollResultItem`);
     inputText.appendChild(optionLabel);
     inputText.appendChild(votes);
 
