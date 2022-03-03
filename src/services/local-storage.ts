@@ -1,11 +1,15 @@
 const KEY = 'op-poll';
 
 export interface ILocalStorageOptions { key: string }
+export interface ILocalStorage {
+  getPolls: () => ILocalStorageResult;
+  savePolls: (v: string) => Promise<void>;
+}
 
 interface ILocalStorageResult { [key: string]: number }
 
 
-export default class LocalStorage {
+export default class LocalStorage implements ILocalStorage {
   private readonly localStorage: Storage = window.localStorage
   private key: string
 
@@ -39,19 +43,3 @@ export default class LocalStorage {
     })
   }
 }
-
-
-/**
- * 
- * 
- * 
- * op-poll: {
- *      pollId = {
- *        index-1: 23,
- *        index-2: 0,
- *        index-3: 55
- *      }
- * }
- * 
- * 
- */
